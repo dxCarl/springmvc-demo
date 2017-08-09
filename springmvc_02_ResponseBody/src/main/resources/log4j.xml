@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<!-- 控制台配置 -->
+    <appender name="console" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss:SSS} %5p [%t] (%F:%L) - %m%n" /> 
+        </layout>
+    </appender>    
+	<!-- 文件输出debug -->
+	<appender name="debug" class="com.springmvc.demo.util.LogAppender">
+        <param name="datePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Threshold" value="DEBUG"/>
+        <param name="Append" value="true" />
+        <param name="File" value="D:/logs/log_debug.log" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss:SSS} %5p [%t] (%F:%L) - %m%n" />
+        </layout>
+    </appender>
+    <!-- 文件输出info -->
+	<appender name="info" class="com.springmvc.demo.util.LogAppender">
+        <param name="datePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Threshold" value="INFO"/>
+        <param name="Append" value="true" />
+        <param name="File" value="D:/logs/log_info.log" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss:SSS} %5p [%t] (%F:%L) - %m%n" />
+        </layout>
+    </appender>
+    <!-- 文件输出warn -->
+	<appender name="warn" class="com.springmvc.demo.util.LogAppender">
+        <param name="datePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Threshold" value="WARN"/>
+        <param name="Append" value="true" />
+        <param name="File" value="D:/logs/log_warn.log" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss:SSS} %5p [%t] (%F:%L) - %m%n" />
+        </layout>
+    </appender>
+    <!-- 文件输出error -->
+	<appender name="error" class="com.springmvc.demo.util.LogAppender">
+        <param name="datePattern" value="'.'yyyy-MM-dd"/>
+        <param name="Threshold" value="ERROR"/>
+        <param name="Append" value="true" />
+        <param name="File" value="D:/logs/log_error.log" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss:SSS} %5p [%t] (%F:%L) - %m%n" />
+        </layout>
+    </appender>
+    
+    <logger name="com.springmvc.demo" additivity="false">
+        <level value="debug" />
+        <appender-ref ref="console" />
+        <appender-ref ref="debug" />
+        <appender-ref ref="info" />
+        <appender-ref ref="warn" />
+        <appender-ref ref="error" />
+    </logger>
+    
+    <logger name="com.mysql">
+    	<level value="INFO" />
+	</logger>
+	<logger name="com.baidu">
+    	<level value="INFO" />
+	</logger>
+	<logger name="com.jnlabs">
+    	<level value="INFO" />
+	</logger>
+	<logger name="com.fasterxml">
+    	<level value="INFO" />
+	</logger>
+	<logger name="com.google">
+    	<level value="INFO" />
+	</logger>
+	<logger name="com.ibatis">
+    	<level value="INFO" />
+	</logger>
+	<logger name="com.alibaba">
+    	<level value="INFO" />
+	</logger>
+	<logger name="org.aopalliance">
+    	<level value="INFO" />
+	</logger>
+	<logger name="org.apache">
+    	<level value="WARN" />
+	</logger>
+	<logger name="org.aspectj">
+    	<level value="INFO" />
+	</logger>
+	<logger name="org.dom4j">
+    	<level value="INFO" />
+	</logger>
+	<logger name="org.dozer">
+    	<level value="WARN" />
+	</logger>
+	<logger name="org.hamcrest">
+    	<level value="INFO" />
+	</logger>
+	<logger name="org.hibernate">
+    	<level value="INFO" />
+	</logger>
+	<logger name="org.json">
+    	<level value="INFO" />
+	</logger>
+	<logger name="org.jboss">
+    	<level value="INFO" />
+	</logger>
+	<logger name="org.mybatis">
+    	<level value="INFO" />
+	</logger>
+	<logger name="org.mockito">
+    	<level value="INFO" />
+	</logger>
+	<logger name="org.objenesis">
+    	<level value="INFO" />
+	</logger>
+	<logger name="org.objectweb">
+    	<level value="INFO" />
+	</logger>
+	<logger name="org.quartz">
+    	<level value="INFO" />
+	</logger>
+	<logger name="org.slf4j">
+    	<level value="INFO" />
+	</logger>
+	<logger name="org.springframework">
+    	<level value="WARN" />
+	</logger>
+	<logger name="javax.servlet">
+    	<level value="INFO" />
+	</logger>
+	<logger name="javax.el">
+    	<level value="INFO" />
+	</logger>
+	<logger name="java.sql">
+    	<level value="INFO" />
+	</logger>
+	<logger name="freemarker">
+    	<level value="INFO" />
+	</logger>
+	<logger name="net.sf">
+    	<level value="INFO" />
+	</logger>
+	
+    <root>
+        <level value="debug" />
+        <appender-ref ref="console" />
+        <appender-ref ref="debug" />
+        <appender-ref ref="info" />
+        <appender-ref ref="warn" />
+        <appender-ref ref="error" />
+    </root> 
+</log4j:configuration>
