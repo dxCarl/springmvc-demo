@@ -1,3 +1,4 @@
-springmvc_01_ViewResolver
-使用springmvc访问jsp页面
+使用jetty运行后，访问：
+
+http://localhost:8080/test.do
 
