@@ -23,6 +23,8 @@
     <module>springmvc_04_UploadFile</module>
     <module>springmvc_00_Base</module>
     <module>springmvc_05_Intercepter</module>
+    <module>springmvc_06_RequestBody</module>
+    <module>springmvc_07_ExceptionHandler</module>
   </modules>
 
 	<dependencies>
