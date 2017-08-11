@@ -20,19 +20,19 @@
 
 	<dependencies>
 
+		<dependency>
+			<groupId>com.springmvc.demo</groupId>
+			<artifactId>springmvc_00_Base</artifactId>
+			<version>${parent.version}</version>
+		</dependency>
+
 		<!-- json转换支持 -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 			<version>2.7.4</version>
 		</dependency>
-		
-		<!-- fastJson支持 -->
-		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>fastjson</artifactId>
-			<version>1.2.12</version>
-		</dependency>
+
 
 	</dependencies>
 

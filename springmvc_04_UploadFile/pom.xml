@@ -2,7 +2,6 @@
 <project
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
@@ -11,9 +10,10 @@
 		<version>1.0.0</version>
 	</parent>
 
-	<artifactId>springmvc_03_Restful</artifactId>
+	<artifactId>springmvc_04_UploadFile</artifactId>
+
 	<packaging>war</packaging>
-	<name>springmvc_03_Restful</name>
+	<name>springmvc_04_UploadFile Maven Webapp</name>
 
 	<url>http://maven.apache.org</url>
 
@@ -23,11 +23,9 @@
 			<artifactId>springmvc_00_Base</artifactId>
 			<version>${parent.version}</version>
 		</dependency>
-
 	</dependencies>
 
 	<build>
-		<finalName>springmvc_03_Restful</finalName>
+		<finalName>springmvc_04_UploadFile</finalName>
 	</build>
-
 </project>

@@ -18,7 +18,11 @@
 
 	<url>http://maven.apache.org</url>
 	<dependencies>
-
+		<dependency>
+			<groupId>com.springmvc.demo</groupId>
+			<artifactId>springmvc_00_Base</artifactId>
+			<version>${parent.version}</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>springmvc_01_ViewResolver</finalName>

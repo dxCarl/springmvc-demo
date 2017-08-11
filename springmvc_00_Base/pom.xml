@@ -2,32 +2,24 @@
 <project
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-
 	<modelVersion>4.0.0</modelVersion>
-
 	<parent>
 		<groupId>com.springmvc.demo</groupId>
 		<artifactId>springmvc-demo</artifactId>
 		<version>1.0.0</version>
 	</parent>
-
-	<artifactId>springmvc_03_Restful</artifactId>
-	<packaging>war</packaging>
-	<name>springmvc_03_Restful</name>
-
+	<artifactId>springmvc_00_Base</artifactId>
+	<name>springmvc_00_Base</name>
 	<url>http://maven.apache.org</url>
-
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 	<dependencies>
+		<!-- fastJson支持 -->
 		<dependency>
-			<groupId>com.springmvc.demo</groupId>
-			<artifactId>springmvc_00_Base</artifactId>
-			<version>${parent.version}</version>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.12</version>
 		</dependency>
-
 	</dependencies>
-
-	<build>
-		<finalName>springmvc_03_Restful</finalName>
-	</build>
-
 </project>

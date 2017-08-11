@@ -20,6 +20,8 @@
 		<module>springmvc_01_ViewResolver</module>
     <module>springmvc_02_ResponseBody</module>
     <module>springmvc_03_Restful</module>
+    <module>springmvc_04_UploadFile</module>
+    <module>springmvc_00_Base</module>
   </modules>
 
 	<dependencies>
