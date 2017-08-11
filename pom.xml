@@ -19,6 +19,7 @@
 	<modules>
 		<module>springmvc_01_ViewResolver</module>
     <module>springmvc_02_ResponseBody</module>
+    <module>springmvc_03_Restful</module>
   </modules>
 
 	<dependencies>
