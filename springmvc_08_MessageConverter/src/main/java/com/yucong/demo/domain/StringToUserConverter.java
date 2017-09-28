@@ -1,4 +1,4 @@
-package com.yucong.domain;
+package com.yucong.demo.domain;
 
 
 import org.springframework.core.convert.converter.Converter;

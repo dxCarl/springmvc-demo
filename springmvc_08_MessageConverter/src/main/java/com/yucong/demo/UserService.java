@@ -1,8 +1,8 @@
-package com.yucong;
+package com.yucong.demo;
 
 import org.springframework.stereotype.Service;
 
-import com.yucong.domain.User;
+import com.yucong.demo.domain.User;
 
 @Service
 public class UserService {

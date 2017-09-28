@@ -1,4 +1,4 @@
-package com.yucong.web;
+package com.yucong.demo.web;
 
 import java.io.File;
 import java.io.IOException;
@@ -44,9 +44,9 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.util.WebUtils;
 
-import com.yucong.UserService;
-import com.yucong.domain.Dept;
-import com.yucong.domain.User;
+import com.yucong.demo.UserService;
+import com.yucong.demo.domain.Dept;
+import com.yucong.demo.domain.User;
 
 @Controller
 @RequestMapping("/user")

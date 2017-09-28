@@ -1,4 +1,4 @@
-package com.yucong.domain;
+package com.yucong.demo.domain;
 
 public class Address {
 	private String tel;

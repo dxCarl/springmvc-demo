@@ -1,4 +1,4 @@
-package com.yucong.web;
+package com.yucong.demo.web;
 
 import javax.servlet.ServletContext;
 

@@ -36,13 +36,53 @@
 
 	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"
 		p:messageConverters-ref="messageConverters">
-
+		<!-- <property name="webBindingInitializer">
+			<bean class="com.yucong.web.MyBindingInitializer" />
+		</property> -->
 	</bean>
 	
 	<util:list id="messageConverters">
+		<!-- <bean class="org.springframework.http.converter.BufferedImageHttpMessageConverter" /> -->
+		<!-- <bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter" /> -->
 		<bean class="org.springframework.http.converter.StringHttpMessageConverter" />
+		<!-- <bean class="org.springframework.http.converter.xml.XmlAwareFormHttpMessageConverter" /> -->
+		<!-- <bean class="org.springframework.http.converter.xml.MarshallingHttpMessageConverter"
+			p:marshaller-ref="xmlMarshaller" 
+			p:unmarshaller-ref="xmlMarshaller">
+		</bean> -->
 		<bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
 	</util:list>
+
+	<!-- <bean id="xmlMarshaller" class="org.springframework.oxm.xstream.XStreamMarshaller">
+		<property name="streamDriver">
+			<bean class="com.thoughtworks.xstream.io.xml.StaxDriver" />
+		</property>
+		<property name="annotatedClasses">
+			<list>
+				<value>com.yucong.domain.User</value>
+			</list>
+		</property>
+	</bean> -->
+
+
+	<!-- XMl及JSON视图解析器配置 -->
+	<!-- <bean id="userListJson"
+		class="org.springframework.web.servlet.view.json.MappingJacksonJsonView"
+		p:renderedAttributes="userList" /> -->
+
+	<!-- <bean id="userListXml"
+		class="org.springframework.web.servlet.view.xml.MarshallingView"
+		p:modelKey="userList" 
+		p:marshaller-ref="xmlMarshaller" /> -->
+
+	<!-- XML文件或国际化资源文件定义视图 -->
+	<!-- <bean class="org.springframework.web.servlet.view.XmlViewResolver"
+		p:order="20" 
+		p:location="/WEB-INF/views/yucong-views.xml" /> -->
+
+	<!-- <bean class="org.springframework.web.servlet.view.ResourceBundleViewResolver"
+		p:order="30" 
+		p:basename="conf/i18n/views" /> -->
 
 	<!-- 协商多种视图解析器 -->
 	<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver"

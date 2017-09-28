@@ -8,7 +8,7 @@
         </layout>
     </appender>    
 	<!-- 文件输出debug -->
-	<appender name="debug" class="com.springmvc.demo.util.LogAppender">
+	<appender name="debug" class="com.yucong.demo.util.LogAppender">
         <param name="datePattern" value="'.'yyyy-MM-dd"/>
         <param name="Threshold" value="DEBUG"/>
         <param name="Append" value="true" />
@@ -18,7 +18,7 @@
         </layout>
     </appender>
     <!-- 文件输出info -->
-	<appender name="info" class="com.springmvc.demo.util.LogAppender">
+	<appender name="info" class="com.yucong.demo.util.LogAppender">
         <param name="datePattern" value="'.'yyyy-MM-dd"/>
         <param name="Threshold" value="INFO"/>
         <param name="Append" value="true" />
@@ -28,7 +28,7 @@
         </layout>
     </appender>
     <!-- 文件输出warn -->
-	<appender name="warn" class="com.springmvc.demo.util.LogAppender">
+	<appender name="warn" class="com.yucong.demo.util.LogAppender">
         <param name="datePattern" value="'.'yyyy-MM-dd"/>
         <param name="Threshold" value="WARN"/>
         <param name="Append" value="true" />
@@ -38,7 +38,7 @@
         </layout>
     </appender>
     <!-- 文件输出error -->
-	<appender name="error" class="com.springmvc.demo.util.LogAppender">
+	<appender name="error" class="com.yucong.demo.util.LogAppender">
         <param name="datePattern" value="'.'yyyy-MM-dd"/>
         <param name="Threshold" value="ERROR"/>
         <param name="Append" value="true" />
@@ -48,7 +48,7 @@
         </layout>
     </appender>
     
-    <logger name="com.springmvc.demo" additivity="false">
+    <logger name="com.yucong.demo" additivity="false">
         <level value="debug" />
         <appender-ref ref="console" />
         <appender-ref ref="debug" />

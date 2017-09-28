@@ -1,4 +1,4 @@
-package com.yucong.domain;
+package com.yucong.demo.domain;
 
 import java.util.Date;
 
