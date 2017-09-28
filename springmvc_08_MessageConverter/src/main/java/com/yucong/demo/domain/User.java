@@ -2,6 +2,9 @@ package com.yucong.demo.domain;
 
 import java.util.Date;
 
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 /*import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Past;
@@ -27,6 +30,7 @@ public class User {
 	
 	//@XStreamAsAttribute
 	//@Pattern(regexp="w{4,30}")
+	@NotEmpty(message = "用户名称不能为空")
 	private String userName;
 	
 	//@XStreamAsAttribute
