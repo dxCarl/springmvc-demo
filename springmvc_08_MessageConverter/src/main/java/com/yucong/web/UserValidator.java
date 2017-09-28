@@ -10,8 +10,7 @@ import com.yucong.domain.User;
 
 public class UserValidator implements Validator {
 	private static String[] reservedUserNames = { "aaaa", "bbbb" };
-	private static List<String> reservedUserNameList = Arrays
-			.asList(reservedUserNames);
+	private static List<String> reservedUserNameList = Arrays.asList(reservedUserNames);
 
 	public boolean supports(Class<?> clazz) {
 		return true;

@@ -158,7 +158,7 @@ public class UserController {
 		session.setAttribute("sessionId", 1234);
 		return "success";
 	}
-	
+
 	@RequestMapping(value = "/success")
 	public String success() {
 		return "success";
@@ -168,7 +168,7 @@ public class UserController {
 	public String fail() {
 		return "fail";
 	}
-	
+
 	@RequestMapping(value = "/handle24")
 	public String handle24(HttpServletRequest request,
 			@RequestParam("userName") String userName) {
@@ -216,7 +216,8 @@ public class UserController {
 	@RequestMapping(value = "/handle43")
 	public String handle43(HttpEntity<String> requestEntity) {
 		long contentLen = requestEntity.getHeaders().getContentLength();
-		System.out.println("user:" + requestEntity.getBody() + ",contentLen:" + contentLen);
+		System.out.println("user:" + requestEntity.getBody() + ",contentLen:"
+				+ contentLen);
 		return "success";
 	}
 
@@ -531,33 +532,33 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/uploadPage")
-	public String updatePage() {	
+	public String updatePage() {
 		return "uploadPage";
 	}
-	
-	
+
 	@RequestMapping(value = "/upload")
 	public String updateThumb(@RequestParam("name") String name,
-			                  @RequestParam("file") MultipartFile file) throws Exception{
+			@RequestParam("file") MultipartFile file) throws Exception {
 		if (!file.isEmpty()) {
-			file.transferTo(new File("d:/temp/"+file.getOriginalFilename()));
+			file.transferTo(new File("d:/temp/" + file.getOriginalFilename()));
 			return "redirect:success.html";
-		}else{
+		} else {
 			return "redirect:fail.html";
 		}
 	}
-	
+
 	@RequestMapping(value = "/throwException")
 	public String throwException() {
 		int a = 2;
-		if(a>1){
+		if (a > 1) {
 			throw new RuntimeException("ddd");
 		}
 		return "success";
 	}
-	
+
 	@ExceptionHandler(RuntimeException.class)
-	public String handleException(RuntimeException re, HttpServletRequest request) {
+	public String handleException(RuntimeException re,
+			HttpServletRequest request) {
 		return "forward:/error.jsp";
 	}
 
@@ -565,11 +566,12 @@ public class UserController {
 	public String notFound() {
 		return "successdddd";
 	}
-	
-    @ResponseStatus(HttpStatus.NOT_FOUND)
+
+	@ResponseStatus(HttpStatus.NOT_FOUND)
 	public String notFound(HttpServletRequest request) {
 		return "forward:/error.jsp";
-	}	
+	}
+
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
 		// binder.registerCustomEditor(User.class, new UserEditor());
