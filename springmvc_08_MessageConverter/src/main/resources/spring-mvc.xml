@@ -16,13 +16,6 @@
         
 	<context:component-scan base-package="com.yucong.demo" />
 
-	<!-- 视图解析器 -->
-	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
-		p:order="100" 
-		p:viewClass="org.springframework.web.servlet.view.JstlView"
-		p:prefix="/WEB-INF/views/" 
-		p:suffix=".jsp" />
-
 	<mvc:annotation-driven />
 
 	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"
