@@ -2,25 +2,49 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
+  
   <parent>
     <groupId>com.springmvc.demo</groupId>
     <artifactId>springmvc-demo</artifactId>
     <version>1.0.0</version>
   </parent>
-  <groupId>com.springmvc.demo</groupId>
+  
   <artifactId>springmvc_08_MessageConverter</artifactId>
-  <version>1.0.0</version>
   <packaging>war</packaging>
+  
   <name>springmvc_08_MessageConverter Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  
   <dependencies>
+  
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    
+    <!-- xml解析支持 -->
+    <dependency>
+	    <groupId>com.thoughtworks.xstream</groupId>
+	    <artifactId>xstream</artifactId>
+	    <version>1.3.1</version>
+	</dependency>
+	
+	<!-- JSR 303 -->
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-validator</artifactId>
+		<version>5.2.2.Final</version>
+	</dependency>
+    
+    
   </dependencies>
+  
+  
+  
+  
+  
   <build>
     <finalName>springmvc_08_MessageConverter</finalName>
   </build>

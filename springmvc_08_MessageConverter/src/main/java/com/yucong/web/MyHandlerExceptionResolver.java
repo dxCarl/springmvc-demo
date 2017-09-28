@@ -1,4 +1,4 @@
-package com.baobaotao.web;
+package com.yucong.web;
 
 import javax.servlet.http.HttpServletRequest;
 

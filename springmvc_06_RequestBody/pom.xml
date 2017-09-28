@@ -7,7 +7,7 @@
 		<version>1.0.0</version>
 	</parent>
 	
-	<artifactId>springmvc1224</artifactId>
+	<artifactId>springmvc_06_RequestBody</artifactId>
 	<packaging>war</packaging>
 	<name>springmvc01 Maven Webapp</name>
 	<url>http://maven.apache.org</url>
@@ -130,41 +130,7 @@
 	</profiles>
 
 	<build>
-		<finalName>springmvc09</finalName>
-
-		<resources>
-
-			<resource>
-				<directory>src/main/java</directory>
-			</resource>
-
-			<resource>
-				<directory>src/main/resources/${env}</directory>
-			</resource>
-
-			<resource>
-				<directory>src/main/resources</directory>
-				<excludes>
-					<exclude>prod/*</exclude>
-					<exclude>test/*</exclude>
-					<exclude>dev/*</exclude>
-				</excludes>
-			</resource>
-
-		</resources>
-
-		<plugins>
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
-					<encoding>UTF-8</encoding>
-				</configuration>
-				<version>3.1</version>
-			</plugin>
-		</plugins>
-
+		<finalName>springmvc_06_RequestBody</finalName>
 	</build>
 
 </project>

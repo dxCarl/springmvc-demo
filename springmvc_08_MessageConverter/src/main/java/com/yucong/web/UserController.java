@@ -1,4 +1,4 @@
-package com.baobaotao.web;
+package com.yucong.web;
 
 import java.io.File;
 import java.io.IOException;
@@ -6,11 +6,8 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
-import javax.management.RuntimeErrorException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,7 +16,6 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
@@ -48,9 +44,9 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.util.WebUtils;
 
-import com.baobaotao.UserService;
-import com.baobaotao.domain.Dept;
-import com.baobaotao.domain.User;
+import com.yucong.UserService;
+import com.yucong.domain.Dept;
+import com.yucong.domain.User;
 
 @Controller
 @RequestMapping("/user")
@@ -183,6 +179,7 @@ public class UserController {
 	@RequestMapping(value = "/handle25")
 	public String handle25(WebRequest request) {
 		String userName = request.getParameter("userName");
+		System.out.println(userName);
 		return "success";
 	}
 
@@ -219,7 +216,7 @@ public class UserController {
 	@RequestMapping(value = "/handle43")
 	public String handle43(HttpEntity<String> requestEntity) {
 		long contentLen = requestEntity.getHeaders().getContentLength();
-		System.out.println("user:" + requestEntity.getBody());
+		System.out.println("user:" + requestEntity.getBody() + ",contentLen:" + contentLen);
 		return "success";
 	}
 
@@ -552,7 +549,8 @@ public class UserController {
 	
 	@RequestMapping(value = "/throwException")
 	public String throwException() {
-		if(2>1){
+		int a = 2;
+		if(a>1){
 			throw new RuntimeException("ddd");
 		}
 		return "success";

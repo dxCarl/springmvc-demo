@@ -3,15 +3,18 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
+	
 	<parent>
 		<groupId>com.springmvc.demo</groupId>
 		<artifactId>springmvc-demo</artifactId>
 		<version>1.0.0</version>
 	</parent>
+	
 	<artifactId>springmvc_07_ExceptionHandler</artifactId>
 	<packaging>war</packaging>
 	<name>springmvc_07_ExceptionHandler Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+	
 	<dependencies>
 		<dependency>
 			<groupId>com.springmvc.demo</groupId>
@@ -19,6 +22,7 @@
 			<version>${parent.version}</version>
 		</dependency>
 	</dependencies>
+	
 	<build>
 		<finalName>springmvc_07_ExceptionHandler</finalName>
 	</build>

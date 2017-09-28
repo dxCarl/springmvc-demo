@@ -1,4 +1,4 @@
-package com.baobaotao.web;
+package com.yucong.web;
 
 import java.util.Arrays;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
-import com.baobaotao.domain.User;
+import com.yucong.domain.User;
 
 public class UserValidator implements Validator {
 	private static String[] reservedUserNames = { "aaaa", "bbbb" };
