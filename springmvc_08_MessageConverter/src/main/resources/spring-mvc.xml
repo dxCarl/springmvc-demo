@@ -14,7 +14,7 @@
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
         
-	<context:component-scan base-package="com.yucong" />
+	<context:component-scan base-package="com.yucong.demo" />
 
 	<!-- 视图解析器 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
@@ -23,50 +23,17 @@
 		p:prefix="/WEB-INF/views/" 
 		p:suffix=".jsp" />
 
-	<mvc:annotation-driven conversion-service="conversionService" />
-
-	<bean id="conversionService"
-		class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
-		<property name="converters">
-			<list>
-				<bean class="com.yucong.domain.StringToUserConverter" />
-			</list>
-		</property>
-	</bean>
+	<mvc:annotation-driven />
 
 	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"
 		p:messageConverters-ref="messageConverters">
-
 	</bean>
 	
 	<util:list id="messageConverters">
 		<bean class="org.springframework.http.converter.StringHttpMessageConverter" />
-		<bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
+		<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
 	</util:list>
 
-	<!-- 协商多种视图解析器 -->
-	<bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver"
-		p:order="0" 
-		p:ignoreAcceptHeader="true" 
-		p:favorPathExtension="false"
-		p:favorParameter="true" 
-		p:parameterName="format" 
-		p:defaultContentType="text/html">
-		<property name="mediaTypes">
-			<map>
-				<entry key="html" value="text/html" />
-				<entry key="xml" value="application/xml" />
-				<entry key="json" value="application/json" />
-			</map>
-		</property>
-		<property name="defaultViews">
-			<list>
-				<bean class="org.springframework.web.servlet.view.json.MappingJacksonJsonView"
-					p:renderedAttributes="userList" />
-				<bean class="org.springframework.web.servlet.view.xml.MarshallingView"
-					p:modelKey="userList" p:marshaller-ref="xmlMarshaller" />
-			</list>
-		</property>
-	</bean>
+	
 
 </beans>

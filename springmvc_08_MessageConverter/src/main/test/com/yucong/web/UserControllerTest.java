@@ -13,7 +13,8 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+//import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
 //import org.springframework.http.converter.xml.MarshallingHttpMessageConverter;
 //import org.springframework.oxm.xstream.XStreamMarshaller;
 import org.springframework.util.FileCopyUtils;
@@ -22,6 +23,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 import com.yucong.demo.domain.User;
+import com.yucong.demo.util.FastJsonUtil;
 
 public class UserControllerTest {
 
@@ -107,12 +109,13 @@ public class UserControllerTest {
 		
 		
 		//②创建MappingJacksonHttpMessageConverter		
-		MappingJacksonHttpMessageConverter jsonConverter = new MappingJacksonHttpMessageConverter();		
+		//MappingJacksonHttpMessageConverter jsonConverter = new MappingJacksonHttpMessageConverter();
+		MappingJackson2HttpMessageConverter jsonConverter = new MappingJackson2HttpMessageConverter();
 		restTemplate.getMessageConverters().add(jsonConverter);
 		return restTemplate;
 	}	
 
-//    @Test
+    @Test
 	public void testhandle51WithJson(){
 		
 		RestTemplate restTemplate = buildRestTemplate();
@@ -124,20 +127,22 @@ public class UserControllerTest {
 		user.setBirthday(new Date());
 		user.setSalary(10000L);
 		
+		System.err.println("user:" + user);
+		
 		HttpHeaders entityHeaders = new HttpHeaders();
 		entityHeaders.setContentType(MediaType.valueOf("application/json;UTF-8"));
 		entityHeaders.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
 		HttpEntity<User> requestEntity = new HttpEntity<User>(user,entityHeaders);
 
 			
-		ResponseEntity<User> responseEntity = restTemplate.exchange(
-			 "http://localhost:8080/chapter15/user/handle51.html",
-			 HttpMethod.POST,requestEntity,User.class);
+		ResponseEntity<User> responseEntity = restTemplate.exchange("http://localhost:8080/user/handle51",
+							HttpMethod.POST,
+							requestEntity,
+							User.class);
 		
 		User responseUser = responseEntity.getBody(); 
-		Assert.assertNotNull(responseUser);
-		Assert.assertEquals("1000", responseUser.getUserId());
-		Assert.assertEquals("tom", responseUser.getUserName());
+		
+		System.err.println("responseUser:" + responseUser);
 	}
 
 //	@Test

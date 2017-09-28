@@ -2,7 +2,7 @@ package com.yucong.demo.domain;
 
 import java.util.Date;
 
-import javax.validation.constraints.DecimalMax;
+/*import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
@@ -14,40 +14,41 @@ import org.springframework.format.annotation.NumberFormat;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
+import com.thoughtworks.xstream.annotations.XStreamOmitField;*/
+import com.yucong.demo.util.FastJsonUtil;
 
 
-@XStreamAlias("message")
+//@XStreamAlias("message")
 public class User {
     
-	@XStreamAlias("id")
-	@XStreamAsAttribute
+	//@XStreamAlias("id")
+	//@XStreamAsAttribute
 	private String userId;
 	
-	@XStreamAsAttribute
-	@Pattern(regexp="w{4,30}")
+	//@XStreamAsAttribute
+	//@Pattern(regexp="w{4,30}")
 	private String userName;
 	
-	@XStreamAsAttribute
-	@Pattern(regexp="S{6,30}")
+	//@XStreamAsAttribute
+	//@Pattern(regexp="S{6,30}")
 	private String password;
 	
-	@XStreamAsAttribute
-	@Length(min=2,max=100)
+	//@XStreamAsAttribute
+	//@Length(min=2,max=100)
 	private String realName;
 	
-	@XStreamAsAttribute
-	@Past
-	@DateTimeFormat(pattern="yyyy-MM-dd")
+	//@XStreamAsAttribute
+	//@Past
+	//@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date birthday;
 	
-	@XStreamAsAttribute
-    @DecimalMin(value="1000.00")
-    @DecimalMax(value="100000.00")
-	@NumberFormat(pattern="#,###.##")
+	//@XStreamAsAttribute
+    //@DecimalMin(value="1000.00")
+    //@DecimalMax(value="100000.00")
+	//@NumberFormat(pattern="#,###.##")
 	private long salary;
 	
-	@XStreamOmitField
+	//@XStreamOmitField
 	private Dept dept;
 
 	public String getUserId() {
@@ -104,5 +105,10 @@ public class User {
 
 	public void setDept(Dept dept) {
 		this.dept = dept;
+	}
+	
+	@Override
+	public String toString() {
+		return FastJsonUtil.toJson(this);
 	}
 }
